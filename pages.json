@@ -3,14 +3,114 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				// "navigationStyle":"custom",
+				"navigationBarTitleText": "叽哩叽哩",
+				"titleNView": {
+					"backgroundColor": "#fff",
+					"titletext": "iflower",
+					"titlecolor": "#000",
+					"buttons": [{
+						"text": "\ue617",
+						"fontSrc": "/static/font/iconfont.ttf",
+						"fontSize": "52rpx",
+						"float": "right",
+						"id": "message"
+					},{
+						"text": "\ue67a",
+						"fontSrc": "/static/font/iconfont.ttf",
+						"fontSize": "52rpx",
+						"float": "left",
+						"id": "menu"
+					},{
+						"text": "\ue75d",
+						"fontSrc": "/static/font/iconfont.ttf",
+						"fontSize": "52rpx",
+						"float": "left",
+						"id": "icon"
+					}],
+					 "searchInput":{
+						"align": "center",
+						"placeholder": "搜你想搜",
+						"borderRadius":"50upx",
+						"backgroundColor": "#fff"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/login/reg",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/login/forget",
+			"style": {
+				"navigationBarTitleText": "忘记密码"
+			}
+		},
+		{
+			"path": "pages/login/blog",
+			"style": {
+				"navigationBarTitleText": "软件用户协议"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/games/games",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/ranking/ranking",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/user/user",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/search/search",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
-	}
+	},
+	"tabBar": {
+	        "color": "#cdcdcd",
+	        "selectedColor": "#39cffc",
+	        "borderStyle": "black",
+	        "backgroundColor": "#ffffff",
+	        "list": [{
+	                "pagePath": "pages/index/index",
+	                "iconPath": "static/icon/index.png",
+	                "selectedIconPath": "static/icon/index1.png",
+	                "text": "首页"
+	            }, {
+	                "pagePath": "pages/games/games",
+	                "iconPath": "static/icon/game.png",
+	                "selectedIconPath": "static/icon/games1.png",
+	                "text": "库"
+	            },
+	            {
+	                "pagePath": "pages/ranking/ranking",
+	                "iconPath": "static/icon/ranking.png",
+	                "selectedIconPath": "static/icon/ranking1.png",
+	                "text": "排行"
+	            }, {
+	                "pagePath": "pages/user/user",
+	                "iconPath": "static/icon/user.png",
+	                "selectedIconPath": "static/icon/user1.png",
+	                "text": "我的"
+	            }
+	        ]
+	    }
 }
