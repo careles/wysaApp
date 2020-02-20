@@ -46,8 +46,7 @@
 			pubComment() {
 				this.$emit('pubComment',this.content);
 			}
-		},
-		props:["maskState"],
+		}
 	}
 </script>
 
