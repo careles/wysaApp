@@ -7,7 +7,7 @@
 		<view class="list">
 			<view class="list-call">
 				<image class="img" src="/static/shilu-login/1.png"></image>
-				<input class="biaoti" v-model="phoneno" type="number" maxlength="11" placeholder="手机号" />
+				<input class="biaoti" v-model="phoneno" type="number" maxlength="11" placeholder="邮箱" />
 			</view>
 			<view class="list-call">
 				<image class="img" src="/static/shilu-login/2.png"></image>
@@ -19,11 +19,6 @@
 				<input class="biaoti" v-model="code" type="number" maxlength="4" placeholder="验证码" />
 				<view class="yzm" :class="{ yzms: second>0 }" @tap="getcode">{{yanzhengma}}</view>
 			</view>
-			<view class="list-call">
-				<image class="img" src="/static/shilu-login/4.png"></image>
-				<input class="biaoti" v-model="invitation" type="text" maxlength="12" placeholder="邀请码" />
-			</view>
-			
 		</view>
 		
 		<view class="dlbutton" hover-class="dlbutton-hover" @tap="bindLogin">
@@ -113,10 +108,10 @@
 				    });
 				    return;
 				}
-				if (this.phoneno.length !=11) {
+				if (this.phoneno.length == 0) {
 				    uni.showToast({
 				        icon: 'none',
-				        title: '手机号不正确'
+				        title: '邮箱不能为空'
 				    });
 				    return;
 				}

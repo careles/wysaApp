@@ -7,7 +7,7 @@
 		<view class="list">
 			<view class="list-call">
 				<image class="img" src="/static/shilu-login/1.png"></image>
-				<input class="biaoti" v-model="phoneno" type="number" maxlength="11" placeholder="输入手机号" />
+				<input class="biaoti" v-model="phoneno" type="number" maxlength="11" placeholder="输入邮箱/手机" />
 			</view>
 			<view class="list-call">
 				<image class="img" src="/static/shilu-login/2.png"></image>
@@ -18,6 +18,10 @@
 		
 		<view class="dlbutton" hover-class="dlbutton-hover" @tap="bindLogin()">
 			<text>登录</text>
+		</view>
+		
+		<view class="dlbutton" hover-class="dlbutton-hover" @tap="iamLogin()">
+			<text>模拟登陆</text>
 		</view>
 		
 		<view class="xieyi">
@@ -41,23 +45,28 @@
 				password:''
 			};
 		},
+		onShow() {
+
+		},
 		methods: {
+			/**
+			 * 模拟登陆
+			 */
+			iamLogin(){
+				uni.setStorageSync("user_key", "1")
+				uni.reLaunch({
+				    url: '/pages/user/user'
+				});
+			},
 			...mapMutations(['login']),
 		    bindLogin() {
-				if (this.phoneno.length != 11) {
+				if (this.phoneno.length == 0 && this.password.length == 0) {
 				     uni.showToast({
 				        icon: 'none',
-				        title: '手机号不正确'
+				        title: '账号/密码不能为空'
 				    });
 				    return;
 				}
-		        if (this.password.length < 6) {
-		            uni.showToast({
-		                icon: 'none',
-		                title: '密码不正确'
-		            });
-		            return;
-		        }
 				uni.request({
 				    url: 'http://***/login.html',
 				    data: {

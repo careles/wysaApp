@@ -5,7 +5,7 @@
 			<view class="tishi">若您忘记了密码，可在此重新设置新密码。</view>
 			<view class="list-call">
 				<image class="img" src="/static/shilu-login/1.png"></image>
-				<input class="biaoti" type="number" v-model="phoneno" maxlength="11" placeholder="请输入手机号" />
+				<input class="biaoti" type="number" v-model="phoneno"  placeholder="请输入邮箱" />
 			</view>
 			<view class="list-call">
 				<image class="img" src="/static/shilu-login/2.png"></image>
@@ -85,10 +85,10 @@
 				});
 			},
 			bindLogin() {
-				if (this.phoneno.length != 11) {
+				if (this.phoneno.length == 0) {
 				     uni.showToast({
 				        icon: 'none',
-				        title: '手机号不正确'
+				        title: '邮箱不能为空'
 				    });
 				    return;
 				}
